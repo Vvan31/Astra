@@ -92,7 +92,7 @@ This software uses the following open source packages:
 - Emojis are taken from [here](https://github.com/arvida/emoji-cheat-sheet.com)
 - [highlight.js](https://highlightjs.org/)
 
-Callout for usefull Tutorials/Examples/Documentatios. 
+Callout for useful Tutorials/Examples/Docs. 
 <br>
 <a href="https://www.youtube.com/embed/ug_89Gx0Ow8">
 	<img src="https://user-images.githubusercontent.com/71792220/202602482-e246b970-5461-4794-93e9-349a804dd544.png" width="160">
