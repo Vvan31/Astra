@@ -1,4 +1,4 @@
-package com.horoscope.astral;
+package com.project.astral;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
