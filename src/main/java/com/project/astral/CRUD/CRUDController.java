@@ -33,7 +33,7 @@ public class CRUDController {
     }
 
     @PutMapping("/update")
-    public String updateCRUD(@RequestBody CRUD crud) throws IllegalAccessException, ExecutionException{
+    public String updateCRUD(@RequestBody CRUD crud) throws IllegalAccessException, ExecutionException, InterruptedException{
         return crudService.updateCRUD(crud);
     }
 

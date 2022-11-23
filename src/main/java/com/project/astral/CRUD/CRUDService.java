@@ -13,20 +13,14 @@ import com.google.firebase.cloud.FirestoreClient;
 
 @Service
 public class CRUDService {
-    /* // FireStore instance API
-    Firestore dbFirestore; 
-
-    public CRUDService(){
-        // Connect to the Firebase client
-        Firestore dbFirestore = FirestoreClient.getFirestore();
-    } */
 
     public String createCRUD(CRUD crud) throws InterruptedException, ExecutionException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
        
         ApiFuture<WriteResult> collectApiFuture = dbFirestore
             .collection("users")
-            .document(crud.getName()).set(crud); 
+            .document(crud.getDocumentId())
+            .set(crud); 
 
         return collectApiFuture.get().getUpdateTime().toString();
     }
@@ -47,8 +41,15 @@ public class CRUDService {
         return null;
     }
 
-    public String updateCRUD(CRUD crud) {
-        return null;
+    public String updateCRUD(CRUD crud) throws InterruptedException, ExecutionException {
+        Firestore dbFirestore = FirestoreClient.getFirestore();
+
+        ApiFuture<WriteResult> collectionApiFuture = dbFirestore
+            .collection("users")
+            .document(crud.getDocumentId())
+            .set(crud);
+        return collectionApiFuture.get().getUpdateTime().toString();
+        
     }
 
     public String deleteCRUD(String documentId) {
