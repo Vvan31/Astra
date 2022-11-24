@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+</head>
+<body>
+    <h1>New User</h1>
+    <form action="/register" method="POST" th:object="${newUser}">
+        <label for="iname">Name</label>
+        <input type="text" id="iname" th:field="${newUser.userName}"/>
+        <br><br>
+        <label for="ipass">Password</label>
+        <input type="text"id="ipass" th:field="${newUser.pass}"/>
+        <button>Create</button>
+    </form>
+    <h1>User List</h1>
+    <table>
+        <tr th:each="user : ${userList}" >
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.userName}"></td>
+            <td th:text="${user.pass}"></td>
+            <td th:text="${user.birthDay}"></td>
+        </tr>
+    </table>
+</body>
+</html>
