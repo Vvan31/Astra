@@ -27,7 +27,7 @@ public class UserController {
 
     @PostMapping("register")
     public String register(AppUser appUser){
-        userRepo.save(appUser);
+        AppUser newUser = new AppUser();
         return "redirect:/home";
     }
 
