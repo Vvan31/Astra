@@ -2,6 +2,7 @@ package com.project.astral;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,7 +13,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import java.io.File;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class AstralApplication {
 
 	public static void main(String[] args) throws IOException {

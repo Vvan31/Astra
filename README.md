@@ -94,7 +94,7 @@ This software uses the following open source packages:
 
 Callout for useful Tutorials/Examples/Docs. 
 <br>
-<a href="https://youtu.be/clH7SxG-Vdc"> Spring Boot Firebase CRUD Application </a>
+<a href="https://youtu.be/clH7SxG-Vdc"> Spring Boot Firebase User Application </a>
 
 <a href="https://www.youtube.com/embed/ug_89Gx0Ow8">
 	<img src="https://user-images.githubusercontent.com/71792220/202602482-e246b970-5461-4794-93e9-349a804dd544.png" width="160">

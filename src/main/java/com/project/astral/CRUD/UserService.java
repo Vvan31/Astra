@@ -2,6 +2,9 @@ package com.project.astral.CRUD;
 
 import java.util.concurrent.ExecutionException;
 
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.google.api.core.ApiFuture;
@@ -11,21 +14,27 @@ import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
 
-@Service
-public class CRUDService {
+import lombok.AllArgsConstructor;
 
-    public String createCRUD(CRUD crud) throws InterruptedException, ExecutionException {
+@Service
+@AllArgsConstructor
+public class UserService implements UserDetailsService{
+
+    private final static String USER_NOT_FOUND = "user with name %s not found";
+    private final UserRepo userRepo;
+
+    public String createUser(User User) throws InterruptedException, ExecutionException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
        
         ApiFuture<WriteResult> collectApiFuture = dbFirestore
             .collection("users")
-            .document(crud.getDocumentId())
-            .set(crud); 
+            .document(User.getDocumentId())
+            .set(User); 
 
         return collectApiFuture.get().getUpdateTime().toString();
     }
 
-    public CRUD getCRUD(String documentId) throws InterruptedException, ExecutionException {
+    public User getUser(String documentId) throws InterruptedException, ExecutionException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         
         DocumentReference docRef = dbFirestore
@@ -33,26 +42,25 @@ public class CRUDService {
             .document(documentId);
         ApiFuture<DocumentSnapshot> future = docRef.get();
         DocumentSnapshot document = future.get();
-        CRUD crud;
+        User User;
         if (document.exists()) {
-            crud = document.toObject(CRUD.class);
-            return crud;
+            User = document.toObject(User.class);
+            return User;
         }
         return null;
     }
 
-    public String updateCRUD(CRUD crud) throws InterruptedException, ExecutionException {
+    public String updateUser(User User) throws InterruptedException, ExecutionException {
         Firestore dbFirestore = FirestoreClient.getFirestore();
 
         ApiFuture<WriteResult> collectionApiFuture = dbFirestore
             .collection("users")
-            .document(crud.getDocumentId())
-            .set(crud);
+            .document(User.getDocumentId())
+            .set(User);
         return collectionApiFuture.get().getUpdateTime().toString();
-        
     }
 
-    public String deleteCRUD(String documentId) {
+    public String deleteUser(String documentId) {
         Firestore dbFirestore = FirestoreClient.getFirestore();
         
         ApiFuture<WriteResult> writeResult = dbFirestore
@@ -62,6 +70,12 @@ public class CRUDService {
         return "Successfully deleted " + documentId;
     }
 
-    
-
+    @Override
+    public UserDetails loadUserByUsername(String username) 
+        throws UsernameNotFoundException {
+       return userRepo.findByName(username).orElseThrow(
+        ()-> new UsernameNotFoundException(
+            String.format(USER_NOT_FOUND, username, null)));
+    }
+ 
 }
