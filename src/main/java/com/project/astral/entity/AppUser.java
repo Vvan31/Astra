@@ -28,14 +28,38 @@ public class AppUser {
     @NotBlank
     private String pass; 
 
-    private String birthDay;
+    private Integer day; 
+    private Integer month; 
+    private Integer year; 
+    private Integer hour; 
+    private Integer minutes; 
+    private String country; 
+    private String city; 
     private String sign;
 
     public AppUser(String userName, String pass){
         this.userName = userName;
         this.pass = pass;
-        this.birthDay = null;
+        this.day = null;
+        this.month = null;
+        this.year = null;
+        this.hour = null;
+        this.minutes = null;
+        this.country = null;
+        this.city = null;
         this.sign = null;
+    }
+    public AppUser(String userName, String pass, String sign){
+        this.userName = userName;
+        this.pass = pass;
+        this.day = null;
+        this.month = null;
+        this.year = null;
+        this.hour = null;
+        this.minutes = null;
+        this.country = null;
+        this.city = null;
+        this.sign = sign;
     }
 
     @Override

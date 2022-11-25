@@ -7,6 +7,7 @@
     <title>Astral App</title>
 </head>
 <body>
+    <!-- Add a new User -->
     <h1>New User</h1>
     <form action="/register" method="POST" th:object="${newUser}">
         <label for="iname">Name</label>
@@ -17,19 +18,21 @@
         <button>Create</button>
     </form>
 
-    <h1>Add Birthday</h1>
-    <form th:action="@{/{id}/edit(id=${newUser.id})}" th:method="put" th:object="${birthDay}">
+    <!-- Edit user. Add birthday -->
+    <!-- <h1>Add Birthday</h1>
+    <form th:action="@{/{id}/edit(id=${editUser.id})}" th:method="put" th:object="${editUser}">
         <label for="iname">Birthday</label>
         <input type="text" id="iname" placeholder="month/day/year" th:field="${newUser.userName}"/>
         <button>Update</button>
-    </form>
+    </form> -->
+
+    <!-- Generate User table list -->
     <h1>User List</h1>
     <table>
-        <tr th:each="user : ${userList}" >
+        <tr th:each="user: ${userList}" >
             <td th:text="${user.id}"></td>
             <td th:text="${user.userName}"></td>
             <td th:text="${user.pass}"></td>
-            <td th:text="${user.birthDay}"></td>
         </tr>
     </table>
 </body>
