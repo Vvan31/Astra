@@ -1,23 +1,9 @@
 <h1 align="center">
   <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://github.com/Vvan31/Astral/blob/main/Astral-removebg-preview.png" alt="Astral" width="200"></a>
-  <br>Astral<br>
+  <br>Astral<br><br>
 </h1>
 
 <h4 align="center">An horoscope tool with a little AI spice.</h4>
-
-<p align="center">
-  <a href="https://badge.fury.io/js/electron-markdownify">
-    <img src="https://badge.fury.io/js/electron-markdownify.svg"
-         alt="Gitter">
-  </a>
-  <a href="https://gitter.im/amitmerchant1990/electron-markdownify"><img src="https://badges.gitter.im/amitmerchant1990/electron-markdownify.svg"></a>
-  <a href="https://saythanks.io/to/bullredeyes@gmail.com">
-      <img src="https://img.shields.io/badge/SayThanks.io-%E2%98%BC-1EAEDB.svg">
-  </a>
-  <a href="https://www.paypal.me/AmitMerchant">
-    <img src="https://img.shields.io/badge/$-donate-ff69b4.svg?maxAge=2592000&amp;style=flat">
-  </a>
-</p>
 
 <p align="center">
   <a href="#key-features">Key Features</a> •
@@ -28,27 +14,18 @@
   <a href="#license">License</a>
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/app/img/markdownify.gif)
+![screenshot](https://media.giphy.com/media/Bwq2rYfYNlCHUqxhUF/giphy.gif)
+![screenshot](https://media.giphy.com/media/TY2g84j5E8Ad2VLIgY/giphy.gif)
 
 ## Key Features
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, macOS and Linux ready.
+* What will the project do?
+* Who are the main users
+* What kinds of problems will they solve with the system?
+* Will this be a GUI design? Why did you choose this modality
+* What are your basic design decisions? (color scheme, page layout, CSS design.)
+
+
 
 ## How To Use
 
