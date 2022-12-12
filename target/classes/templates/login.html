@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet"  href="login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title>Log in</title>
+</head>
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+      
+          <!-- Icon -->
+          <div class="fadeIn first">
+            <img src="/Astral-removebg-preview.png" id="icon" alt="User Icon" />
+          </div>
+
+          <!-- Login Form -->
+          <form action="@{login/auth}" method="post" h:object="${appUser}">
+            <input type="text" id="login" th:field="${appUser.username}" class="fadeIn second" name="login" placeholder="Username">
+            <input type="password" id="password" th:field="${appUser.pass}" class="fadeIn third" name="login" placeholder="Password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+            <div class="text--center" th:if="${param.error}"> Invalid username and password. </div> 
+            <div class="text--center" th:if="${param.logout}"> You have been logged out. </div>
+          </form>
+    
+          <!-- Remind Passowrd -->
+          <div id="formFooter">
+            <a class="underlineHover" href="/l">Create new account</a>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
